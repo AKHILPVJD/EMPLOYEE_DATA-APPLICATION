@@ -1,0 +1,30 @@
+{% comment %} #3 {% endcomment %}
+<html>
+<head>
+</head>
+<body>
+    <h1 align="center">Employee List</h1>
+    <table align="center" cellpadding="10px" border="2">
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>                
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.designation }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.phone }}</td>
+            <td>
+                <a href="{% url 'update_employee' employee.id %}">Edit</a> |
+                <a href="{% url 'delete_employee' employee.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'create_employee' %}">Add New Employee</a>
+</body>
+</html>

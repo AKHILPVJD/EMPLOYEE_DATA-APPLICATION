@@ -1,0 +1,40 @@
+{% comment %} #5 {% endcomment %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Employee</title>
+    </head>
+    <body>
+        <form method="POST">
+            {% csrf_token %}
+            <table align="center" cellpadding="10px" border="2">
+                <tr>
+                    <th colespan="2">Create Employee</th>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" required></td>
+                </tr>
+                <tr>
+                    <td>Designation:</td>
+                    <td><input type="text" name="designation" required></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" name="email" required></td>
+                </tr>
+                <tr><td>Phone:</td>
+                    <td><input type="phone" name="phone" required></td></tr>
+                <tr>
+                    <td colespan="2" align="center">
+                        <button type="submit">Create Employee</button>
+
+
+                    </td>
+                </tr>
+                
+
+            </table>
+        </form>
+    <body>
+</html>
